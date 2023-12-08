@@ -7,7 +7,7 @@ import Filter from './Filter/Filter.jsx';
 
 export const App = () => {
   const [contacts, setContacts] = useState(() => {
-    const localData = localStorage.getItem('contacts');
+    const localData = window.localStorage.getItem('contacts');
     if (localData) {
       return JSON.parse(localData);
     } else {
