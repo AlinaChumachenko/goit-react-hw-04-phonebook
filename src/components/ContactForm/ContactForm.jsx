@@ -8,10 +8,6 @@ const ContactForm = ({ onSubmit }) => {
     number: '',
   });
 
-  const reset = () => {
-    setContactElement({ name: '', number: '' });
-  };
-
   const handleChange = e => {
     const { name, value } = e.target;
     setContactElement(prev => ({ ...prev, [name]: value }));
@@ -21,6 +17,10 @@ const ContactForm = ({ onSubmit }) => {
     e.preventDefault();
     onSubmit(contactElement);
     reset();
+  };
+
+  const reset = () => {
+    setContactElement({ name: '', number: '' });
   };
 
   return (
